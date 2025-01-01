@@ -21,6 +21,13 @@ jobs:
       with:
         python-version: 3.9
 
+    - name: Xvfb Kurulumu ve Başlatma
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        Xvfb :99 -screen 0 1024x768x16 &
+        export DISPLAY=:99
+
     - name: Gereksinimleri Kur
       run: |
         pip install pytest
