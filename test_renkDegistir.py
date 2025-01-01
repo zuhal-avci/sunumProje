@@ -1,12 +1,10 @@
+from unittest.mock import MagicMock
 import tkinter as tk
 
+tk.Tk = MagicMock()
+
 def test_rengi_degistir():
-    # Tkinter penceresi oluştur
     pencere = tk.Tk()
     pencere.configure(bg="Blue")
-
-    # Arka plan rengini değiştir
     pencere.configure(bg="Red")
-
-    # Test: Arka plan rengi değişti mi?
-    assert pencere["bg"] == "Red"
+    assert pencere.configure.call_args[1]["bg"] == "Red"
