@@ -7,7 +7,7 @@ pencere.geometry("300x200")
 
 # Arka plan rengini değiştiren fonksiyon
 def rengi_degistir():
-    pencere.configure(bg="lightblue")
+    pencere.configure(bg="Red")
 
 # Tek bir buton oluştur
 buton = tk.Button(pencere, text="Rengi Değiştir", command=rengi_degistir)
