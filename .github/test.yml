@@ -1,0 +1,30 @@
+name: Python Test Workflow
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Depoyu Kopyala
+      uses: actions/checkout@v3
+
+    - name: Python Kurulumu
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    - name: Gereksinimleri Kur
+      run: |
+        pip install pytest
+
+    - name: Testleri Çalıştır
+      run: |
+        pytest test_renkDegistir.py
